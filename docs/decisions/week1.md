@@ -1,0 +1,4 @@
+- Learned C++ basics
+- Set up repo and Colab
+- Practiced with dynamic allocation and general C++ syntax
+- Got distracted with 2026 FIFA World Cup 
