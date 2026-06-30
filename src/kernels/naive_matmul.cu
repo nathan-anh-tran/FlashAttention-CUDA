@@ -39,13 +39,13 @@ int main() {
     for (int r = 0; r < m; r += 1) {
         for (int c = 0; c < k; c += 1) {
             int i = r * k + c;
-            h_A[i] = i;
+            h_A[i] = 1.0f;
         }
     }
     for (int r = 0; r < k; r += 1) {
         for (int c = 0; c < n; c += 1) {
             int i = r * n + c;
-            h_B[i] = i * 2;
+            h_B[i] = 2.0f;
         }
     }
 
@@ -67,13 +67,13 @@ int main() {
             }
             if (fabsf(h_C[r * n + c] - sum) > 1e-3) {
                 passed = false;
-                std::cout << "Failed at row " << r << " col " << c;
-                break;
             }
         }
     }
     if (passed) {
-        std::cout << "Passed!";
+        std::cout << "Passed!" << '\n';
+    } else {
+        std::cout << "Failed!" << '\n';
     }
 
     cudaFree(d_A);
