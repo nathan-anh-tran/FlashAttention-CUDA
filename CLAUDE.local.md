@@ -120,5 +120,4 @@ Active learning gaps (concepts being built right now):
 - _(Add decisions here as they're made, with the week noted.)_
 ## What I've Tried (don't re-suggest)
  
-- Nothing yet — project start, Week 1.
-- _(Log completed kernels and dead ends here each week so we don't repeat them.)_
+- Completed week 1 and week 2 with vector add and naive matmul
