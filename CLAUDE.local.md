@@ -102,15 +102,12 @@ real milestone before chasing speed.
   *Done:* finished repo + writeup with the optimization journey and charts.
 ## Current Phase
  
-**Week 1 — C++ fundamentals, toolchain setup, vector-add kernel.**
+**Week 4 — Parallel reduction**
 Running on: Colab free T4 (compile with `-arch=sm_75`).
 
 Active learning gaps (concepts being built right now):
-- Pointers and manual memory management (biggest gap from Java/Python)
-- Host vs device memory model (`cudaMalloc`, `cudaMemcpy`, `cudaFree`)
 - CUDA function qualifiers (`__global__`, `__device__`, `__host__`)
 - Kernel launch syntax `<<<blocks, threads>>>` and index calculation
-- C++ `new` / `delete[]` vs Python garbage collection
  
 ## Architecture Decisions
  
@@ -118,6 +115,8 @@ Active learning gaps (concepts being built right now):
 - Validate every kernel against a PyTorch reference. (Week 0)
 - fp16 storage / fp32 accumulation as the starting convention. (Week 0)
 - _(Add decisions here as they're made, with the week noted.)_
+
 ## What I've Tried (don't re-suggest)
  
 - Completed week 1 and week 2 with vector add and naive matmul
+- Completed week 3 tiled matmul and benchmarked with Nsight compute
