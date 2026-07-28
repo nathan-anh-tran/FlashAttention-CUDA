@@ -1,0 +1,1 @@
+- Doing sum reduction, array summed and return summed value
