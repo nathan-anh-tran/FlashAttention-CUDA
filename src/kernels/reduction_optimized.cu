@@ -36,7 +36,7 @@ int main() {
     cudaMalloc((void**) &d_out, sizeof(float));
 
     for (int i = 0; i < n; i += 1) {
-        h_in[i] = i * 3 + 1;
+        h_in[i] = 1.0f;
     }
 
     cudaMemcpy(d_in, h_in, n * sizeof(float), cudaMemcpyHostToDevice);
