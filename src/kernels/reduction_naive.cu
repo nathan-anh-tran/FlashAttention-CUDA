@@ -25,7 +25,7 @@ __global__ void reduceSum(const float* input, float* output, int n) {
 }
 
 int main() {
-    const int n = 256;
+    const int n = 1048576;
     float* h_in = new float[n];
     float* h_out = new float;
 
@@ -36,14 +36,14 @@ int main() {
     cudaMalloc((void**) &d_out, sizeof(float));
 
     for (int i = 0; i < n; i += 1) {
-        h_in[i] = i * 3 + 1;
+        h_in[i] = 1;
     }
 
     cudaMemcpy(d_in, h_in, n * sizeof(float), cudaMemcpyHostToDevice);
 
-    int numBlocks = 1;
+    int numBlocks = 4096;
     int threadsPerBlock = 256;
-    int sharedMemBytes = sizeof(float) * n;
+    int sharedMemBytes = sizeof(float) * threadsPerBlock;
     reduceSum<<<numBlocks, threadsPerBlock, sharedMemBytes>>>(d_in, d_out, n);
 
     cudaMemcpy(h_out, d_out, sizeof(float), cudaMemcpyDeviceToHost);
